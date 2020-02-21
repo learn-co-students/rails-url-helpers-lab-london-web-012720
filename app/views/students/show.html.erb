@@ -1,1 +1,17 @@
-<h1><%= @student.to_s %></h1>
+<h1><%= @student.to_s %></h1><br>
+
+<%if %>
+<%= @student.active == false%>
+<form action="/students/show">
+    <input type="checkbox" id="@student.activate" name="active" value="Active">
+    <label for="@student.activate">This student is currently inactive. </label>
+</form>
+<%else %>%
+<%= @student.active == true%>
+<form action="/students/show">
+    <input type="checkbox" id="@student.activate" name="active" value="Active">
+    <label for="@student.activate">This student is currently active. </label>
+</form>
+<%end%>%
+
+
